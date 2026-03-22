@@ -1,0 +1,4 @@
+{:paths ["src/main"]
+ :deps {; thheller/shadow-cljs {:mvn/version <latest>}
+        no.cjohansen/replicant {:mvn/version "2025.06.21"}
+        no.cjohansen/nexus {:mvn/version "2025.11.1"}}}
