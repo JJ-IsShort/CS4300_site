@@ -1,0 +1,3 @@
+[submodule "public/pure-js/gulls"]
+	path = public/pure-js/gulls
+	url = https://codeberg.org/charlieroberts/gulls.git
