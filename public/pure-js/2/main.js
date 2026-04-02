@@ -1,5 +1,7 @@
 import { default as gulls } from "./gulls/gulls.js";
 import { default as Video } from "./gulls/helpers/video.js";
+import { default as Mouse } from "./gulls/helpers/mouse.js";
+import { Pane } from "https://cdn.jsdelivr.net/npm/tweakpane@4.0.5/dist/tweakpane.min.js";
 
 const canvas = document.getElementById("gpu-canvas");
 const errorOverlay = document.getElementById("error-overlay");
@@ -75,40 +77,8 @@ function showError(msg) {
 
 // Lol forgot about gulls for a second there
 async function initWebGPU() {
-  const shader = `${gulls.constants.vertex}
-
-// the sampler / texture for live video appear
-// after all uniforms, storage buffers, and the
-// sampler / texture for feedback.
-@group(0) @binding(0) var<uniform> resolution: vec2f;
-@group(0) @binding(1) var backSampler:    sampler;
-@group(0) @binding(2) var backBuffer:     texture_2d<f32>;
-@group(0) @binding(3) var videoSampler:   sampler;
-
-// NOTE THAT THERE IS A DIFFERENT GROUP NUMBER FOR THE
-// VIDEO TEXTURE BELOW. This lets gulls easily rebind
-// the texture for each frame, without having to rebind
-// the other variables in group 0. Given the new group,
-// the binding index resets to 0.
-
-@group(1) @binding(0) var videoBuffer:    texture_external;
-
-@fragment 
-fn fs( @builtin(position) pos : vec4f ) -> @location(0) vec4f {
-  let p = pos.xy / resolution;
-
-  // WebGPU requires us to use a different function to sample
-  // from live video / video files
-  let video = textureSampleBaseClampToEdge( videoBuffer, videoSampler, p );
-
-  // read the previous frame of video
-  let fb = textureSample( backBuffer, backSampler, p );
-
-  // combine the circle and the feedback
-  let out = video * .05 + fb * .975;
-
-  return vec4f( out.rgb, 1. );
-}`;
+  const frag = await gulls.import("./frag.wgsl"),
+    shader = gulls.constants.vertex + frag;
 
   const sg = await gulls.init();
 
@@ -117,15 +87,38 @@ fn fs( @builtin(position) pos : vec4f ) -> @location(0) vec4f {
   const back = new Float32Array(gulls.width * gulls.height * 4);
   const feedback_t = sg.texture(back);
 
+  Mouse.init();
+
+  const mouse = sg.uniform(Mouse.values);
+
+  const pane = new Pane();
+  const k_height = sg.uniform(1.9);
+  const k_pow = sg.uniform(1.9);
+  const r_sharpness = { val: { x: 2, y: 2, z: 2 } }
+  const r_sharpness_u = sg.uniform(Object.values(r_sharpness.val))
+
+  pane.addBinding(k_height, 'value', { min: 0, max: 4, label: 'k_height' })
+  pane.addBinding(k_pow, 'value', { min: 0.1, max: 6, label: 'k_pow' })
+  pane
+    .addBinding(r_sharpness, 'val', { label: 'r_sharpness' })
+    .on('change', v => r_sharpness_u.value = Object.values(r_sharpness.val))
+
   const render = await sg.render({
     shader,
     data: [
       sg.uniform([sg.width, sg.height]),
       sg.sampler(),
       feedback_t,
+      mouse,
+      k_height,
+      k_pow,
+      r_sharpness_u,
       sg.video(Video.element),
     ],
     copy: feedback_t,
+    onframe() {
+      mouse.value = Mouse.values;
+    },
   });
 
   sg.run(render);

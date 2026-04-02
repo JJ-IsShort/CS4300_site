@@ -14,8 +14,8 @@ return cljs.core.pr_str.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.
 replicant.console_logger.scrub_sexp = (function replicant$console_logger$scrub_sexp(sexp){
 return clojure.walk.prewalk((function (x){
 if(cljs.core.map_QMARK_(x)){
-return cljs.core.into.cljs$core$IFn$_invoke$arity$2(cljs.core.PersistentArrayMap.EMPTY,cljs.core.remove.cljs$core$IFn$_invoke$arity$2((function (p1__21909_SHARP_){
-return new cljs.core.Keyword("replicant","internal","replicant/internal",-1504696787).cljs$core$IFn$_invoke$arity$1(cljs.core.meta(cljs.core.val(p1__21909_SHARP_)));
+return cljs.core.into.cljs$core$IFn$_invoke$arity$2(cljs.core.PersistentArrayMap.EMPTY,cljs.core.remove.cljs$core$IFn$_invoke$arity$2((function (p1__26586_SHARP_){
+return new cljs.core.Keyword("replicant","internal","replicant/internal",-1504696787).cljs$core$IFn$_invoke$arity$1(cljs.core.meta(cljs.core.val(p1__26586_SHARP_)));
 }),x));
 } else {
 return x;
@@ -31,15 +31,15 @@ return scrubbed;
 return cljs.core.conj.cljs$core$IFn$_invoke$arity$2(cljs.core.vec(cljs.core.take.cljs$core$IFn$_invoke$arity$2((2),scrubbed)),new cljs.core.Symbol(null,"...","...",-1926939749,null));
 }
 });
-replicant.console_logger.report = (function replicant$console_logger$report(p__21922){
-var map__21925 = p__21922;
-var map__21925__$1 = cljs.core.__destructure_map(map__21925);
-var title = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21925__$1,new cljs.core.Keyword(null,"title","title",636505583));
-var message = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21925__$1,new cljs.core.Keyword(null,"message","message",-406056002));
-var hiccup = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21925__$1,new cljs.core.Keyword(null,"hiccup","hiccup",1218876238));
-var fname = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21925__$1,new cljs.core.Keyword(null,"fname","fname",1500291491));
-var alias = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21925__$1,new cljs.core.Keyword(null,"alias","alias",-2039751630));
-var data = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21925__$1,new cljs.core.Keyword(null,"data","data",-232669377));
+replicant.console_logger.report = (function replicant$console_logger$report(p__26596){
+var map__26597 = p__26596;
+var map__26597__$1 = cljs.core.__destructure_map(map__26597);
+var title = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26597__$1,new cljs.core.Keyword(null,"title","title",636505583));
+var message = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26597__$1,new cljs.core.Keyword(null,"message","message",-406056002));
+var hiccup = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26597__$1,new cljs.core.Keyword(null,"hiccup","hiccup",1218876238));
+var fname = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26597__$1,new cljs.core.Keyword(null,"fname","fname",1500291491));
+var alias = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26597__$1,new cljs.core.Keyword(null,"alias","alias",-2039751630));
+var data = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__26597__$1,new cljs.core.Keyword(null,"data","data",-232669377));
 replicant.console_logger.print_heading((""+"Replicant warning: "+cljs.core.str.cljs$core$IFn$_invoke$arity$1(title)));
 
 replicant.console_logger.log(message);
@@ -55,13 +55,13 @@ replicant.console_logger.log((""+"Alias: "+cljs.core.str.cljs$core$IFn$_invoke$a
 }
 
 if(cljs.core.truth_(data)){
-var formatted_21950 = replicant.console_logger.pprstr(data);
-if((((formatted_21950).length) < (80))){
-replicant.console_logger.log((""+"Input data: "+cljs.core.str.cljs$core$IFn$_invoke$arity$1(formatted_21950)));
+var formatted_26600 = replicant.console_logger.pprstr(data);
+if((((formatted_26600).length) < (80))){
+replicant.console_logger.log((""+"Input data: "+cljs.core.str.cljs$core$IFn$_invoke$arity$1(formatted_26600)));
 } else {
 replicant.console_logger.log("Input data:");
 
-replicant.console_logger.log(formatted_21950);
+replicant.console_logger.log(formatted_26600);
 }
 } else {
 }

@@ -7,10 +7,10 @@ return or__5142__auto__;
 } else {
 var temp__5823__auto__ = cljs.core.re_find(/\/?#\/(\w+)\/?(.*)?/,path);
 if(cljs.core.truth_(temp__5823__auto__)){
-var vec__13429 = temp__5823__auto__;
-var _ = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__13429,(0),null);
-var target = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__13429,(1),null);
-var args = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__13429,(2),null);
+var vec__27589 = temp__5823__auto__;
+var _ = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__27589,(0),null);
+var target = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__27589,(1),null);
+var args = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__27589,(2),null);
 var temp__5821__auto__ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(routing.pages,target);
 if(cljs.core.truth_(temp__5821__auto__)){
 var page = temp__5821__auto__;

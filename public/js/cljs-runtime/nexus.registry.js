@@ -13,8 +13,8 @@ nexus.registry.register_placeholder_BANG_ = (function nexus$registry$register_pl
 return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(nexus.registry._BANG_registry,cljs.core.assoc_in,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("nexus","placeholders","nexus/placeholders",1656029064),placeholder_k], null),f);
 });
 nexus.registry.register_interceptor_BANG_ = (function nexus$registry$register_interceptor_BANG_(var_args){
-var G__12384 = arguments.length;
-switch (G__12384) {
+var G__26552 = arguments.length;
+switch (G__26552) {
 case 2:
 return nexus.registry.register_interceptor_BANG_.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 

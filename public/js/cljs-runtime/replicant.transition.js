@@ -10,12 +10,12 @@ var comma = str.indexOf(",");
 if((((s < (0))) && ((ms < (0))))){
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [n,cljs.core.unchecked_int(duration)], null);
 } else {
-var G__21758 = (((comma < (0)))?"":str.substring((comma + (1))).trimLeft());
-var G__21759 = (n + (1));
-var G__21760 = cljs.core.max.cljs$core$IFn$_invoke$arity$2(duration,(((((s < ms)) || ((ms < (0)))))?((1000) * cljs.core.parse_double(str.substring((0),s))):cljs.core.parse_long(str.substring((0),ms))));
-str = G__21758;
-n = G__21759;
-duration = G__21760;
+var G__27535 = (((comma < (0)))?"":str.substring((comma + (1))).trimLeft());
+var G__27536 = (n + (1));
+var G__27537 = cljs.core.max.cljs$core$IFn$_invoke$arity$2(duration,(((((s < ms)) || ((ms < (0)))))?((1000) * cljs.core.parse_double(str.substring((0),s))):cljs.core.parse_long(str.substring((0),ms))));
+str = G__27535;
+n = G__27536;
+duration = G__27537;
 continue;
 }
 break;
