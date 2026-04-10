@@ -11,13 +11,21 @@
      [:div {:class [:w-222 :h-fit "border-[#8540c9]" :border-2 :p-2]}
       [:h1 "Assignment 1"]
       [:a {:href "https://youtu.be/drzaUCl1_R8"} "Video Link (clickable)"]
-      [:object {:class "application/pdf" :data "./pdfs/Assignment_1.pdf" :width "100%" :height 1000}
-       [:p "Don't know why but the pdf won't display. Download here:" [:a {:href "/pdfs/Assignment_1.pdf"} "link"]]]]
+      [:object {:class "application/pdf" :data "./pdfs/Assignment_1.pdf" :width "100%" :height 500}
+       [:p "Don't know why but the pdf won't display. Download here: " [:a {:href "/pdfs/Assignment_1.pdf"} "link"]]]]
 
      [:div {:class [:w-222 :h-fit "border-[#8540c9]" :border-2 :p-2]}
       [:h1 "Assignment 2"]
       [:a {:href "pure-js/2"} "Project Link (clickable)"]
       [:br]
       [:a {:href "https://github.com/JJ-IsShort/CS4300_site/tree/main/public/pure-js/2"} "Repo (clickable)"]
-      [:object {:class "application/pdf" :data "./pdfs/Assignment_2.pdf" :width "100%" :height 1000}
-       [:p "Don't know why but the pdf won't display. Download here:" [:a {:href "/pdfs/Assignment_2.pdf"} "link"]]]]]]])
+      [:object {:class "application/pdf" :data "./pdfs/Assignment_2.pdf" :width "100%" :height 500}
+       [:p "Don't know why but the pdf won't display. Download here: " [:a {:href "/pdfs/Assignment_2.pdf"} "link"]]]]
+
+     [:div {:class [:w-222 :h-fit "border-[#8540c9]" :border-2 :p-2]}
+      [:h1 "Assignment 3"]
+      [:a {:href "pure-js/3"} "Project Link (clickable)"]
+      [:br]
+      [:a {:href "https://github.com/JJ-IsShort/CS4300_site/tree/main/public/pure-js/3"} "Repo (clickable)"]
+      [:object {:class "application/pdf" :data "./pdfs/Assignment_3.pdf" :width "100%" :height 500}
+       [:p "Don't know why but the pdf won't display. Download here: " [:a {:href "/pdfs/Assignment_3.pdf"} "link"]]]]]]])
