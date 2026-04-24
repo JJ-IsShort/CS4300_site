@@ -31,9 +31,17 @@
        [:p "Don't know why but the pdf won't display. Download here: " [:a {:href "/pdfs/Assignment_3.pdf"} "link"]]]]
 
      [:div {:class [:w-222 :h-fit "border-[#8540c9]" :border-2 :p-2]}
-           [:h1 "Assignment 4"]
-           [:a {:href "pure-js/4"} "Project Link (clickable)"]
-           [:br]
-           [:a {:href "https://github.com/JJ-IsShort/CS4300_site/tree/main/public/pure-js/4"} "Repo (clickable)"]
-           [:object {:class "application/pdf" :data "./pdfs/Assignment_4.pdf" :width "100%" :height 500}
-            [:p "Don't know why but the pdf won't display. Download here: " [:a {:href "/pdfs/Assignment_4.pdf"} "link"]]]]]]])
+      [:h1 "Assignment 4"]
+      [:a {:href "pure-js/4"} "Project Link (clickable)"]
+      [:br]
+      [:a {:href "https://github.com/JJ-IsShort/CS4300_site/tree/main/public/pure-js/4"} "Repo (clickable)"]
+      [:object {:class "application/pdf" :data "./pdfs/Assignment_4.pdf" :width "100%" :height 500}
+       [:p "Don't know why but the pdf won't display. Download here: " [:a {:href "/pdfs/Assignment_4.pdf"} "link"]]]]
+
+     [:div {:class [:w-222 :h-fit "border-[#8540c9]" :border-2 :p-2]}
+      [:h1 "Assignment 5"]
+      [:a {:href "pure-js/5"} "Project Link (clickable)"]
+      [:br]
+      [:a {:href "https://github.com/JJ-IsShort/CS4300_site/tree/main/public/pure-js/5"} "Repo (clickable)"]
+      [:object {:class "application/pdf" :data "./pdfs/Assignment_5.pdf" :width "100%" :height 500}
+       [:p "Don't know why but the pdf won't display. Download here: " [:a {:href "/pdfs/Assignment_5.pdf"} "link"]]]]]]])

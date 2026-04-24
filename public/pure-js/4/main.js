@@ -17,7 +17,7 @@ const print = console.log;
 async function initWebGPU() {
   const sg = await gulls.init(),
     size = window.innerWidth * window.innerHeight
-  const NUM_PARTICLES = 1024*4,
+  const NUM_PARTICLES = 1024*16,
         NUM_PROPERTIES = 3, 
         state = new Float32Array( NUM_PARTICLES * NUM_PROPERTIES )
 
